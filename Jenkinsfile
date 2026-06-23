@@ -7,7 +7,9 @@ pipeline {
         IMAGE_NAME    = "jenkins-sample-app"
         IMAGE_TAG     = "${BUILD_NUMBER}"
     }
-
+    tools {
+        nodejs 'node-20' // Must match the name in Global Tool Configuration
+    }
     stages {
         stage('Install Dependencies') {
             steps {
